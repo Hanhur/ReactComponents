@@ -64,7 +64,7 @@ console.log(sum(1, 2, 5, 10))
 console.log(sum(1, 2, 10, 10, 10))
 */
 
-const App = () => {
+const Forms = () => {
     const [firstName, setFirstName] = useState("");
     const [names, setNames] = useState([]);
 
@@ -105,4 +105,4 @@ const App = () => {
     );
 }
 
-export default App;
+export default Forms;

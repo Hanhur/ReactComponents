@@ -1,9 +1,10 @@
 import { useState } from "react";
 
-const App = () => {
+const Forms2 = () => {
     // const [fullName, setFullName] = useState("");
     // const [email, setEmail] = useState("");
     // const [age, setAge] = useState("");
+
     const [oneUser, setOneUser] = useState({fullName: "", email: "", age: ""});
     const [users, setUsers] = useState([]);
 
@@ -11,6 +12,7 @@ const App = () => {
         const name = event.target.name;
         const value = event.target.value;
        
+        // Динамична променна [name]
         setOneUser({...oneUser, [name]: value }); 
     }    
 
@@ -24,7 +26,7 @@ const App = () => {
             const newUser = {...oneUser, id: new Date().getTime()}
             setUsers((users) => {
                 return [...users, newUser];
-            })
+            });
             setOneUser({ fullName: "", email: "", age: "" });
         }
         else 
@@ -85,4 +87,4 @@ const App = () => {
     );
 }
 
-export default App;
+export default Forms2;

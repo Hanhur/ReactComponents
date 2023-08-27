@@ -1,5 +1,7 @@
 import { useState } from "react";
 import data from "./data";
+import Forms from "./Forms/Forms";
+import Forms2 from "./Forms/Forms2";
 
 const App = () => {
     const [count, setCount] = useState(0);
@@ -9,7 +11,6 @@ const App = () => {
         event.preventDefault();
         let amount = parseInt(count);
 
-        // kontrola krajních hodnot
         if (amount < 0) 
         {
             amount = 1;
@@ -19,7 +20,12 @@ const App = () => {
             amount = 5;
         }
 
-        setParagraphs(data.slice(0, amount));
+        const resultParagraphs = data.filter((oneParagraph, index) => {
+            return index < amount;
+        });
+        setParagraphs(resultParagraphs);
+
+        //setParagraphs(data.slice(0, amount));
     }
 
     return (
@@ -33,10 +39,14 @@ const App = () => {
             <article>
                 {
                     paragraphs.map((oneParagraph, index) => {
-                        return <p key={index}>{oneParagraph}</p>
+                        return (
+                            <p key={index}>{oneParagraph}</p>
+                        );
                     })
                 }
             </article>
+            <Forms />
+            <Forms2 />
         </section>
     );
 }
