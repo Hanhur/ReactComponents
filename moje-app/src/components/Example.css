@@ -1,0 +1,20 @@
+.tetx-button-changer 
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.tetx-button-changer h1 
+{
+    text-align: center;
+    color: #91BBF2;
+}
+
+.tetx-button-changer button 
+{
+    background-color: #035AA6;
+    color: #91BBF2;
+    border: none;
+    margin: 5px 0;
+    padding: 3px 0;
+}
