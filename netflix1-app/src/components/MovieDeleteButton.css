@@ -1,0 +1,8 @@
+.movie-delete-button
+{
+    width: 100%;
+    color: white;
+    background-color: #e50914;
+    padding: 5px;
+    cursor: pointer;
+}
