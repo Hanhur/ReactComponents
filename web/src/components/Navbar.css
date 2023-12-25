@@ -1,0 +1,18 @@
+header 
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+nav 
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+nav a 
+{
+    display: inline-block;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #e5e5e5;
+}
