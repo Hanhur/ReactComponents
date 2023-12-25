@@ -1,8 +1,7 @@
-
 const Serials = () => {
     return (
         <section>
-            <h1>Seriály</h1>
+           <h1>Serials</h1>
         </section>
     );
 }

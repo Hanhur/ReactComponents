@@ -4,8 +4,8 @@ const Error = () => {
     return (
         <div>
             <h2>404</h2>
-            <p>Stránka nenalezena</p>
-            <p><Link to="/">Úvodní strana</Link></p>
+            <p>Stranka nenalezena</p>
+            <p><Link to="/">Home</Link></p>
         </div>
     );
 }

@@ -1,8 +1,9 @@
+import "./Footer.css";
 
 const Footer = () => {
     return (
         <footer>
-            <p>Patička</p>
+            <p>&copy; Vladimir Hanhur, 2023</p>
         </footer>
     );
 }
