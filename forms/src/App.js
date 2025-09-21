@@ -1,41 +1,73 @@
 import { useState } from 'react';
 
 const App = () => {
-    const [firstName, setFirstName] = useState("");
-    const [names, setNames] = useState([]);
+    const [oneUser, setOneUser] = useState({ fullName: "", email: "", age: "" });
+
+    const [users, setUsers] = useState([]);
+
+    const formChange = (event) => { 
+        const name = event.target.name; 
+        const value = event.target.value; 
+
+        setOneUser({ ...oneUser, [name]: value }); 
+    }
 
     const formSubmit = (event) => {
         event.preventDefault();
-        console.log(firstName);
 
-        if (firstName)
-        {
-            setNames((names) => {
-                return [...names, firstName]
+        if (oneUser.fullName && oneUser.email && oneUser.age) {
+            const newUser = {...oneUser, id: new Date().getTime()}
+
+            setUsers((users) => {
+                return [...users, newUser]
             });
-        } 
-        else 
-        {
-            console.log("Nebylo nic vyplněno");
+
+            setOneUser({ fullName: "", email: "", age: "" });
         }
-        setFirstName("");
+        else {
+            console.log("Něco nebylo vyplněno!");
+        }
     }
 
     return (
         <article>
             <form onSubmit={formSubmit}>
-                <input 
-                    className="userName" 
-                    type="text" 
+                <input
+                    className="userInfo"
+                    type="text"
                     placeholder="Name"
-                    value={firstName}
-                    onChange={(event) => setFirstName(event.target.value)}
+                    value={oneUser.fullName}
+                    onChange={formChange}
+                    name="fullName"
                 />
-                <input type="submit"/>
+                <input
+                    className="userInfo"
+                    type="email"
+                    placeholder="Email"
+                    value={oneUser.email}
+                    onChange={formChange}
+                    name="email"
+                />
+                <input
+                    className="userInfo"
+                    type="text"
+                    placeholder="Věk"
+                    value={oneUser.age}
+                    onChange={formChange}
+                    name="age"
+                />
+                <input type="submit" />
             </form>
             {
-                names.map((oneName, index) => {
-                    return <p className="item" key={index}>{oneName}</p>
+                users.map((oneUser) => {
+                    const { id, fullName, email, age } = oneUser
+                    return (
+                        <div className="item" key={id}>
+                            <h4>{fullName}</h4>
+                            <p>{email}</p>
+                            <p>{age}</p>
+                        </div>
+                    );
                 })
             }
         </article>
