@@ -1,0 +1,17 @@
+nav {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.link {
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.activeLink {
+    color: #e50914;
+}
+
+.nonactiveLink {
+    color: #e5e5e5;
+}
